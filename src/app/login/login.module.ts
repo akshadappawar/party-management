@@ -1,16 +1,24 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoginRoutingModule } from './login-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoginComponent
+  ],
   imports: [
     CommonModule,
     LoginRoutingModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+    RouterModule,
+
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class LoginModule { }
